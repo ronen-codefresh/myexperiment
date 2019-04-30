@@ -10,6 +10,8 @@ node {
     //              enableConfigSubstitution: false
       //)
 
+      git 'https://github.com/ronen-codefresh/myexperiment.git'
+
       kubernetesDeploy configs: '${workspace}/k8s/nginx-deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfig-staging', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
    }
  
