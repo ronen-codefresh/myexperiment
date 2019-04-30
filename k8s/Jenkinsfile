@@ -1,9 +1,12 @@
 node {
-   echo 'Hello World'
+   echo 'Starting deployment'
 
    kubernetesDeploy(kubeconfigId: 'kubeconfig-staging2',               // REQUIRED
 
                  configs: 'k8s/*.yaml', // REQUIRED
                  enableConfigSubstitution: false
-)
+   )
+
+   echo 'deployment ended'
+
 }
