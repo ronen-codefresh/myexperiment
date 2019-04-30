@@ -6,7 +6,7 @@ node {
    
       kubernetesDeploy(kubeconfigId: 'kubeconfig-staging',               // REQUIRED
 
-                  configs: 'k8s/*.yaml', // REQUIRED
+                  configs: '**/*.yaml', // REQUIRED
                   enableConfigSubstitution: false
       )
    }
