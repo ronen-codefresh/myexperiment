@@ -1,12 +1,18 @@
 node {
-   echo 'Starting deployment'
+   stage("echo 1") {
+      echo 'Starting deployment'
+   }
+   stage("deploy") {
+   
+      kubernetesDeploy(kubeconfigId: 'kubeconfig-staging',               // REQUIRED
 
-   kubernetesDeploy(kubeconfigId: 'kubeconfig-staging2',               // REQUIRED
-
-                 configs: 'k8s/*.yaml', // REQUIRED
-                 enableConfigSubstitution: false
-   )
-
-   echo 'deployment ended'
-
+                  configs: 'k8s/*.yaml', // REQUIRED
+                  enableConfigSubstitution: false
+      )
+   }
+ 
+   stage("echo 2") {
+   
+      echo 'deployment ended'
+   }
 }
