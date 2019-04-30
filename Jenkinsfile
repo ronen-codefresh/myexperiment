@@ -10,7 +10,7 @@ node {
     //              enableConfigSubstitution: false
       //)
 
-      kubernetesDeploy configs: '${WORKSPACE}/k8s/nginx-deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfig-staging', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+      kubernetesDeploy configs: '${workspace}/k8s/nginx-deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfig-staging', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
    }
  
    stage("echo 2") {
