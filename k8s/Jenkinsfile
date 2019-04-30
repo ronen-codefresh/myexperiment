@@ -1,0 +1,9 @@
+node {
+   echo 'Hello World'
+
+   kubernetesDeploy(kubeconfigId: 'kubeconfig-staging',               // REQUIRED
+
+                 configs: 'k8s/*.yaml', // REQUIRED
+                 enableConfigSubstitution: false
+)
+}
